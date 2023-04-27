@@ -40,4 +40,4 @@
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=maythamghaly&show_icons=true&locale=en&layout=compact" alt="maythamghaly" /></p>
 25
 26 -->
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=maythamghaly&" alt="maythamghaly" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=MMG606&" alt="MMG606" /></p>
