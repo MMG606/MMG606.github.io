@@ -1,4 +1,4 @@
-[![MasterHead](https://camo.githubusercontent.com/775ed67e1d46c9534c3cb9a4694edf0603b1436a7e3e15891d3c327733fc26b6/68747470733a2f2f7777772e61756469656e6365706c616e65742e636f6d2f726f6f742f74656d706c6174652f312f2f696d616765732f7765622d646576656c6f706d656e742e676966)](https://maythamghaly.io)
+<!-- [![MasterHead](https://camo.githubusercontent.com/775ed67e1d46c9534c3cb9a4694edf0603b1436a7e3e15891d3c327733fc26b6/68747470733a2f2f7777772e61756469656e6365706c616e65742e636f6d2f726f6f742f74656d706c6174652f312f2f696d616765732f7765622d646576656c6f706d656e742e676966)](https://maythamghaly.io)
 2
 <h1 align="center">Hello 👋, I'm Maytham Ghaly</h1>
 3
@@ -39,5 +39,5 @@
 24
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=maythamghaly&show_icons=true&locale=en&layout=compact" alt="maythamghaly" /></p>
 25
-26
+26 -->
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=maythamghaly&" alt="maythamghaly" /></p>
