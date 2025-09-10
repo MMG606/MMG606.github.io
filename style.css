@@ -474,7 +474,7 @@ a {
   /* Set size to match your image container */
   width: 100%;
   height: 200px; /* Adjust as needed */
-  background-color: #333; /* Dark gray placeholder */
+  /*background-color: var(--gray-900);*/
   display: flex;
   justify-content: center;
   align-items: center;
