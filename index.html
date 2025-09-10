@@ -78,47 +78,57 @@
                 <h2 class="section-title text-purple">Some Of My Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card" data-image-src="assets/g1mall.gif">
-                        <img src="assets/g1mall.gif" alt="E-commerce Mobile App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/g1mall.gif" alt="E-commerce Mobile App GIF" class="project-image"
+                            loading="lazy">
                         <h3 class="project-title">E-Commerce Mobile App</h3>
                         <p class="project-description">Developed/Published the Mobile application using Flutter framwork
                             using Restful APIS.</p>
                     </div>
                     <div class="project-card" data-image-src="assets/Turbo.gif">
-                        <img src="assets/Turbo.gif" alt="Food delivery App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/Turbo.gif" alt="Food delivery App GIF" class="project-image" loading="lazy">
                         <h3 class="project-title">Food Delivery App</h3>
                         <p class="project-description">User can only view shops and restaurants in a 10km
                             radius(modifiable) using geolocation, order the products, schedule the delivery, add notes
                             to each order.technologies used are Flutter framwork and RESTful apis, Firebase.</p>
                     </div>
                     <div class="project-card" data-image-src="assets/wms.gif">
-                        <img src="assets/wms.gif" alt="Warehouse management system App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/wms.gif" alt="Warehouse management system App GIF" class="project-image"
+                            loading="lazy">
                         <h3 class="project-title">Warehouse management system App</h3>
                         <p class="project-description">includes many functionalities like item barcode scaning,item
                             search,transfer from warehouses to warehouse, inventory count, receive order and many more.
                         </p>
                     </div>
                     <div class="project-card" data-image-src="assets/headsout.gif">
-                        <img src="assets/headsout.gif" alt="Traveling agency GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/headsout.gif" alt="Traveling agency GIF" class="project-image" loading="lazy">
                         <h3 class="project-title">Traveling agency informative Website</h3>
                         <p class="project-description">Created a responsive and a user friendly website using (css -
                             sass
                             - JavaScript - jQuery).</p>
                     </div>
                     <div class="project-card" data-image-src="assets/merch.gif">
-                        <img src="assets/merch.gif" alt="Merchandising App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/merch.gif" alt="Merchandising App GIF" class="project-image" loading="lazy">
                         <h3 class="project-title">Merchandising App</h3>
                         <p class="project-description">Sales persons use it to check on stores to view products/stands
                             quantities and send the reports, the app can work offline and all the data is saved locally
                             on the device and when the user has access to internet he can sync the data.</p>
                     </div>
                     <div class="project-card" data-image-src="assets/g1mall web.gif">
-                        <img src="assets/g1mall web.gif" alt="E-commerce Website GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/g1mall web.gif" alt="E-commerce Website GIF" class="project-image"
+                            loading="lazy">
                         <h3 class="project-title">E-Commerce Website</h3>
                         <p class="project-description">Created the website using PHP Laravel framwork, AWS, ajax, css,
                             bootstrap.</p>
                     </div>
                     <div class="project-card" data-image-src="assets/rental.gif">
-                        <img src="assets/rental.gif" alt="Car rental App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/rental.gif" alt="Car rental App GIF" class="project-image" loading="lazy">
                         <h3 class="project-title">Car Rental App</h3>
                         <p class="project-description">Adding cars to stock with specifications, changing the status of
                             the car from in show room to sold with the price it was sold at, the app has multiple access
@@ -126,7 +136,9 @@
                             except for the admin whaich has access to all levels.</p>
                     </div>
                     <div class="project-card" data-image-src="assets/automation.gif">
-                        <img src="assets/automation.gif" alt="Home Automation App GIF" class="project-image">
+                        <div class="loading-placeholder"></div>
+                        <img src="assets/automation.gif" alt="Home Automation App GIF" class="project-image"
+                            loading="lazy">
                         <h3 class="project-title">Home Automation App</h3>
                         <p class="project-description">Connected microcontrollers, sensors and motors together to
                             simulate a home system.The used technologies are MQTT messaging protocol and Firebase
@@ -233,6 +245,30 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('visible')) {
                 modal.classList.remove('visible'); // Remove the visible class
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectImages = document.querySelectorAll('.project-image');
+
+            projectImages.forEach(img => {
+                if (img.complete) {
+                    handleImageLoad(img);
+                } else {
+                    img.addEventListener('load', () => {
+                        handleImageLoad(img);
+                    });
+                }
+            });
+
+            function handleImageLoad(img) {
+                const parentCard = img.closest('.project-card');
+                const placeholder = parentCard.querySelector('.loading-placeholder');
+
+                img.classList.add('loaded');
+                if (placeholder) {
+                    placeholder.remove();
+                }
             }
         });
     </script>
