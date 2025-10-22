@@ -30,8 +30,7 @@ a {
 
 .contact-button img.contact-icon {
     width: 1.5rem;
-    height: 1.5rem;
-    
+    height: 1.5rem;   
 }
 
 /* Header & Navigation */
@@ -90,6 +89,11 @@ a {
     cursor: pointer;
 }
 
+.mobile-menu-button .menu-icon {
+    width: 24px;   
+    height: 24px; 
+  
+}
 .mobile-menu-button svg {
     height: 1.5rem;
     width: 1.5rem;

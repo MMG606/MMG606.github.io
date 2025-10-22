@@ -16,18 +16,27 @@ VANTA.NET({
 })
 
 
+
 // Toggle mobile menu
 document.getElementById('mobile-menu-button').addEventListener('click', function () {
     const menu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+
     menu.classList.toggle('hidden');
+
+
+    openIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
 });
 document.querySelectorAll('.mobile-nav-item').forEach(item => {
     item.addEventListener('click', function () {
         const menu = document.getElementById('mobile-menu');
-        // Hide the menu by adding the 'hidden' class
         menu.classList.add('hidden');
     });
 });
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
