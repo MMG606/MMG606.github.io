@@ -30,6 +30,7 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
     openIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
 });
+
 document.querySelectorAll('.mobile-nav-item').forEach(item => {
     item.addEventListener('click', function () {
         const openIcon = document.getElementById('menu-open-icon');
@@ -49,6 +50,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+// Hide mobile menu on scroll
+window.addEventListener('scroll', function () {
+    const menu = document.getElementById('mobile-menu');
+    if (!menu.classList.contains('hidden')) {
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+
+
+        menu.classList.add('hidden');
+
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
 });
 
 // Image modal functionality
