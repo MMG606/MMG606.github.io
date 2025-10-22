@@ -104,11 +104,12 @@ a {
 }
 
 .mobile-menu-dropdown {
-    background-color: rgba(31, 41, 55, 0.9);
+    background-color: rgba(31, 41, 55, 0);
     backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
 }
 
 .mobile-nav-item {

@@ -32,6 +32,10 @@ document.getElementById('mobile-menu-button').addEventListener('click', function
 });
 document.querySelectorAll('.mobile-nav-item').forEach(item => {
     item.addEventListener('click', function () {
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
         const menu = document.getElementById('mobile-menu');
         menu.classList.add('hidden');
     });
