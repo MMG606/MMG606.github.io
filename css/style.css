@@ -28,7 +28,11 @@ a {
     display: none;
 }
 
-
+.contact-button img.contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    
+}
 
 /* Header & Navigation */
 .main-header {
