@@ -141,6 +141,7 @@ var swiper = new Swiper(".swiper", {
     centeredSlides: true,
     slidesPerView: "1",
     watchOverflow: true,
+    lazy: true,
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -148,13 +149,19 @@ var swiper = new Swiper(".swiper", {
         modifier: 1,
         slideShadows: true
     },
+
+    lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true,
+    },
     autoplay: {
-        delay: 1500, 
+        delay: 1500,
         //disableOnInteraction: true, 
         pauseOnMouseEnter: true,
     },
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
     breakpoints: {
         320: {

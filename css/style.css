@@ -553,7 +553,13 @@ a {
     height: 100%;
     width: 100%;
     object-fit: cover;
-   
-    
+}
+.swiper-lazy-preloader {
+    position: absolute;
+    border-color: purple !important; 
+    border-top-color: transparent !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
