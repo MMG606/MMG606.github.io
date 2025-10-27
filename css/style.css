@@ -11,6 +11,10 @@
     --gray-400: #9ca3af;
     --gray-300: #d1d5db;
     --white: #fff;
+    --marquee-width: 100vw;
+    --marquee-elements-displayed: 15;
+    --marquee-element-width: 170px;
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
 }
 
 /*2. Base & Utility Styles*/
@@ -28,6 +32,11 @@ a {
 
 .hidden {
     display: none !important;
+}
+
+.fab {
+    color: var(--purple-500);
+    font-size: 60px;
 }
 
 .container {
@@ -537,4 +546,75 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+/*languages carousel*/
+.marquee {
+    width: 100%;
+    height: 150px;
+    background-color: var(--gray-800);
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee:before,
+.marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+}
+
+.marquee:before {
+    left: 0;
+    background: linear-gradient(to right, var(--gray-800) 0%, transparent 100%);
+}
+
+.marquee:after {
+    right: 0;
+    background: linear-gradient(to left, var(--gray-800) 0%, transparent 100%);
+}
+
+.marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+    white-space: nowrap;
+}
+
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+    }
+}
+
+.marquee-content li {
+    max-height: 100%;
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+
+}
+
+
+@media (max-width: 600px) {
+    .fab {
+        font-size: 40px;
+    }
+
+    .marquee {
+
+        height: 130px;
+
+    }
+    :root{
+           --marquee-element-width: 80px;
+    }
 }
