@@ -11,10 +11,10 @@
     --gray-400: #9ca3af;
     --gray-300: #d1d5db;
     --white: #fff;
-    --marquee-width: 100vw;
+    /* --marquee-width: 100vw;
     --marquee-elements-displayed: 15;
     --marquee-element-width: 170px;
-    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s); */
 }
 
 /*2. Base & Utility Styles*/
@@ -549,12 +549,120 @@ a {
 }
 
 /*languages carousel*/
+
 .marquee {
+    justify-self: center;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    height: 100px;
+    background-color: var(--gray-800);
+    padding-bottom: 2rem;
+}
+
+.marquee-content li img {
+    width: 80px;
+    padding-left: 3em;
+    padding-right: 3rem;
+
+}
+
+.marquee-content {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    z-index: 1;
+
+}
+
+.marquee::before,
+.marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    /* adjust width for fade size */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    /* allows clicks to pass through */
+}
+
+.marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--gray-800) 0%, transparent 100%);
+}
+
+.marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--gray-800) 0%, transparent 100%);
+}
+
+.marquee-left .marquee-content {
+    animation: scroll-left 50s linear infinite;
+}
+
+.marquee-right .marquee-content {
+    animation: scroll-right 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .marquee {
+        width: 100%;
+        height: 50px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+
+    .marquee-content li img {
+        width: 50px;
+        padding-left: 1em;
+        padding-right: 1rem;
+    }
+
+    .marquee-left .marquee-content {
+        animation: scroll-left 40s linear infinite;
+    }
+
+    .marquee-right .marquee-content {
+        animation: scroll-right 30s linear infinite;
+    }
+}
+
+/* .marquee {
     width: 100%;
     height: 150px;
     background-color: var(--gray-800);
     overflow: hidden;
     position: relative;
+}
+.marquee img {
+    width: 80px;
+    height: 80px;
+   
 }
 
 .marquee:before,
@@ -617,4 +725,4 @@ a {
     :root{
            --marquee-element-width: 80px;
     }
-}
+} */

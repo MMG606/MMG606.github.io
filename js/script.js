@@ -175,12 +175,21 @@ var swiper = new Swiper(".swiper", {
     }
 });
 //Languages carousel
-const root = document.documentElement;
-const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-const marqueeContent = document.querySelector("ul.marquee-content");
+// const root = document.documentElement;
+// const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+// const marqueeContent = document.querySelector("ul.marquee-content");
 
-root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+// root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 
-for (let i = 0; i < marqueeElementsDisplayed; i++) {
-    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+// for (let i = 0; i < marqueeElementsDisplayed; i++) {
+//     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+// }
+
+function duplicateMarqueeContent() {
+    const marqueeLists = document.querySelectorAll('.marquee-content');
+    marqueeLists.forEach(ul => {
+        const contentToDuplicate = ul.innerHTML;
+        ul.innerHTML += contentToDuplicate;
+    });
 }
+document.addEventListener('DOMContentLoaded', duplicateMarqueeContent);
