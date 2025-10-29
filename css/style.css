@@ -291,6 +291,9 @@ a {
     .about-section {
     padding: 7rem 0rem ;
 }
+.about-container{
+        padding: 0.5rem;
+}
 }
 @media (min-width: 768px) {
     .about-content {
