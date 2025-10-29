@@ -549,7 +549,6 @@ a {
 }
 
 /*languages carousel*/
-
 .marquee {
     justify-self: center;
     overflow: hidden;
@@ -584,11 +583,9 @@ a {
     position: absolute;
     top: 0;
     width: 80px;
-    /* adjust width for fade size */
     height: 100%;
     z-index: 2;
     pointer-events: none;
-    /* allows clicks to pass through */
 }
 
 .marquee::before {
@@ -649,6 +646,15 @@ a {
 
     .marquee-right .marquee-content {
         animation: scroll-right 30s linear infinite;
+    }
+
+    .marquee::before,
+    .marquee::after {
+
+        width: 40px;
+
+
+
     }
 }
 
